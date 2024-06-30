@@ -1,11 +1,5 @@
-import Image from "next/image";
-import { Button } from "@repo/ui/button";
-import styles from "./page.module.css";
-
-export default function Home() {
-  return (
-  <div>
-     hi there from page.tsx
+export default function() {
+  return <div>
+    hi there 
   </div>
-  );
 }
