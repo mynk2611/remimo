@@ -6,6 +6,6 @@
     "recoil": "^0.7.7"
   },
   "exports": {
-    "./*": "./dist/hooks/useBalance.js"
+    "./useBalance": "./src/hooks/usebalance.ts"
   }
 }
