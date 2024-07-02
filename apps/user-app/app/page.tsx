@@ -1,10 +1,19 @@
 "use client";
 
-import { useBalance } from '@repo/store/useBalance'
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
-export default function() {
-  const value = useBalance()
-  return <div>
-    hi there {value}
-  </div>
+export default function HomePage() {
+    const { data: session, status } = useSession();
+    if ( session?.user){
+        redirect("/dashboard")
+    }
+    else {
+      return (
+        <div>
+          <h1>Home Page</h1>
+          <button onClick={() => {redirect("/api/auth/sigin")} }>Sign In</button>
+        </div>
+      )
+    }
 }

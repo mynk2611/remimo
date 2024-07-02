@@ -21,6 +21,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "recoil": "^0.7.7"
   }
 }
