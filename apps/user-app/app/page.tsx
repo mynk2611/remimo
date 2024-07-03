@@ -1,19 +1,26 @@
 "use client";
-
-import { signIn, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function HomePage() {
     const { data: session, status } = useSession();
-    if ( session?.user){
-        redirect("/dashboard")
-    }
-    else {
-      return (
-        <div>
-          <h1>Home Page</h1>
-          <button onClick={() => {redirect("/api/auth/sigin")} }>Sign In</button>
-        </div>
-      )
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/dashboard");
+        }
+    }, [status, router]);
+
+    if (status === "loading") {
+        return <div>Loading...</div>;
+    } else {
+        return (
+            <div>
+                <h1>Home Page</h1>
+                <button onClick={() => router.push("/signup")}>Signup</button>
+            </div>
+        );
     }
 }
