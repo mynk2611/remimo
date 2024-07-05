@@ -20,6 +20,8 @@ export default function HomePage() {
             <div>
                 <h1>Home Page</h1>
                 <button onClick={() => router.push("/signup")}>Signup</button>
+                <br />
+                <button onClick={() => router.push("/api/auth/signin")}>Signin</button>
             </div>
         );
     }
