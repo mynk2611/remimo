@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.spotlight {
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .relative:hover .spotlight {
+    transform: scale(1);
+  }
+  
+  .spotlight-bg {
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .spotlight-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9));
+    pointer-events: none;
+  }
