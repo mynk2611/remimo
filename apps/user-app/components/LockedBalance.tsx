@@ -3,7 +3,7 @@ import { LockedIcon } from "@repo/ui/lockedIcon";
 
 export function LockedBalance({ locked }: { locked: number }) {
   return (
-    <div>
+    <div className="h-52 flex flex-col justify-center">
       <Card
         title="Locked Balance"
         value={`$${locked}`}

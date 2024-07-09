@@ -25,8 +25,8 @@ export default async function dashboard() {
 
   return (
     <div className="spotlight-bg h-screen flex justify-center">
-      <div className="border rounded-2xl border-zinc-600 p-10 mt-6 mx-4">
-        <div className="flex space-x-4 p-4">
+      <div className="border rounded-2xl border-zinc-600 p-10 mt-6 mx-4 w-11/12">
+        <div className="flex justify-evenly p-4">
 
           <WalletBalance amount={balance.amount} />
 

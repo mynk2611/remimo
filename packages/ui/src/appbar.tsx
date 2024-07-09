@@ -15,7 +15,7 @@ export const Appbar = ({
     onSignout
 }: AppbarProps) => {
     return (
-        <div className="flex justify-between border-b px-10 bg-customblack py-2">
+        <div className="flex justify-between border-b border-black px-10 bg-customblack py-2 sticky top-0 z-50">
             <div className="flex">
                 <div className="text-base flex flex-col justify-center text-white font-semibold">
                     Remimo
