@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./appbarItem": "./src/appbarItem.tsx",
     "./appbar" : "./src/appbar.tsx",
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    "./card2" : "./src/card2.tsx",
+    "./moneyIcon" : "./src/moneyIcon.tsx",
+    "./walletIcon" : "./src/walletIcon.tsx",
+    "./lockedIcon" : "./src/lockedIcon.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
