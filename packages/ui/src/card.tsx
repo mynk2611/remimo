@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({ title, value, dateRange, color, gradientFro
           <div>
                {icon}         
           </div>
-          <div className="mt-10 text-2xl font-bold">{value}</div>
+          <div className="mt-10 text-3xl font-bold">{value}</div>
         </div>
         {/* {dateRange && <p className="text-sm">{dateRange}</p>} */}
       </div>

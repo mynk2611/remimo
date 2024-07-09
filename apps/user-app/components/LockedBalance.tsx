@@ -10,8 +10,8 @@ export function LockedBalance({ locked }: { locked: number }) {
         color="purple"
         gradientFrom="from-purple-500"
         gradientTo="to-indigo-500"
-        width="w-64"
-        height="h-36"
+        width="w-72"
+        height="h-40"
         icon={<LockedIcon/>}
       />
     </div>

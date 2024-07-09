@@ -10,8 +10,8 @@ export function UnlockedBalance({ unlocked }: { unlocked: number }) {
         color="green"
         gradientFrom="from-green-500"
         gradientTo="to-teal-500"
-        width="w-64"
-        height="h-36"
+        width="w-72"
+        height="h-40"
         icon={<MoneyIcon/>}
       />
     </div>
