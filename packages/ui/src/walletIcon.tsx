@@ -8,7 +8,7 @@ export function WalletIcon(){
         stroke="currentColor"
         width="40"    // Change these values to your desired width and height
         height="20"
-        className="size-24 mt-8"
+        className="size-28 mt-6"
       >
         <path
           strokeLinecap="round"

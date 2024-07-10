@@ -6,13 +6,14 @@ export default function WalletBalance({ amount }: { amount: number }) {
     <div>
       <Card
         title="Wallet"
-        value={`${amount}`}
+        value={`$ ${amount}`}
         color="purple"
         gradientFrom="from-pink-500"
         gradientTo="to-red-700"
         dateRange="Jan 1 - Jan 10"
-        width="w-80"
+        width= "w-[22rem]"
         height="h-52"
+        mt="mt-20"
         icon={<WalletIcon/>}
       />
     </div>

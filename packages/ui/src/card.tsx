@@ -12,9 +12,10 @@ interface CardProps {
   width : string;
   height : string;
   icon : React.ReactNode;
+  mt : string
 }
 
-const Card: React.FC<CardProps> = ({ title, value, dateRange, color, gradientFrom, gradientTo, width ="w-64", height = "h-36", icon }) => {
+const Card: React.FC<CardProps> = ({ title, value, dateRange, color, gradientFrom, gradientTo, width ="w-64", height = "h-36", icon, mt }) => {
   return (
     <motion.div
       className={`relative ${width} ${height} rounded-lg shadow-lg p-4 bg-gradient-to-r ${gradientFrom} ${gradientTo} text-white overflow-hidden`}
@@ -40,7 +41,7 @@ const Card: React.FC<CardProps> = ({ title, value, dateRange, color, gradientFro
           <div>
                {icon}         
           </div>
-          <div className="mt-10 text-3xl font-bold">{value}</div>
+          <div className={`${mt} text-3xl font-bold`}>{value}</div>
         </div>
         {/* {dateRange && <p className="text-sm">{dateRange}</p>} */}
       </div>
