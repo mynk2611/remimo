@@ -10,7 +10,9 @@
     "./card2" : "./src/card2.tsx",
     "./moneyIcon" : "./src/moneyIcon.tsx",
     "./walletIcon" : "./src/walletIcon.tsx",
-    "./lockedIcon" : "./src/lockedIcon.tsx"
+    "./lockedIcon" : "./src/lockedIcon.tsx",
+    "./bankCard" : "./src/bankCard.tsx",
+    "./transferCard" : "./src/transferCard.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
