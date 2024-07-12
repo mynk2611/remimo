@@ -1,16 +1,17 @@
 import StatusCard from "./statusCard";
+import { onrampStatus } from "@prisma/client";
 
 export function BankCard({transactions}:{transactions:{
         amount: number,
-        status: string,
-        date: string,
+        status: onrampStatus,
+        date: Date,
         provider: string
 }}){
     return(
     <div className="grid grid-cols-4 p-2 text-white hover:bg-zinc-800  ">
         <div className="flex flex-col justify-center ">
                 <div className="flex ">
-                      {transactions.date}
+                      {transactions.date.toDateString()}
                 </div>
         </div>
 

@@ -1,11 +1,12 @@
 import { BankCard } from "@repo/ui/bankCard"
 import { TransferCard } from "@repo/ui/transferCard"
+import { onrampStatus } from "@prisma/client"
 
 export function BankTransfer({ transactions }: {
     transactions: {
         amount: number,
-        status: string,
-        date: string,
+        status: onrampStatus,
+        date: Date,
         provider: string
     }[]
 }) {
