@@ -7,7 +7,7 @@ interface AppbarProps {
     },
     // TODO: can u figure out what the type should be here?
 
-    onSignout: any
+    onSignout: ()=>void;
 }
 
 export const Appbar = ({

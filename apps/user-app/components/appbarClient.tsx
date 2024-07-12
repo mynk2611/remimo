@@ -10,8 +10,8 @@ export const AppbarClient = () => {
     return(
     <div className="w-full">
         <Appbar onSignout={async()=>{
-            await signOut();
-            route.push("/api/auth/signin")
+            await signOut({redirect : false});
+            route.push("/")
         }} user={session?.data?.user}/>
     </div>
     )
