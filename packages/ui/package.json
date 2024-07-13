@@ -12,7 +12,9 @@
     "./walletIcon" : "./src/walletIcon.tsx",
     "./lockedIcon" : "./src/lockedIcon.tsx",
     "./bankCard" : "./src/bankCard.tsx",
-    "./transferCard" : "./src/transferCard.tsx"
+    "./transferCard" : "./src/transferCard.tsx",
+    "./backgroundBoxDemo" : "./src/backgroundBoxDemo.tsx"
+
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

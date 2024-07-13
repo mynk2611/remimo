@@ -1,7 +1,8 @@
-export default function transfer(){
-    return(
+import { BackgroundBoxesDemo } from '@repo/ui/backgroundBoxDemo';
+export default function Transfer() {
+  return (
     <div>
-        hi there from the p2p page
+      <BackgroundBoxesDemo />
     </div>
-    )
+  );
 }
