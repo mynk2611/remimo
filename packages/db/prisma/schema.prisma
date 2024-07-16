@@ -9,14 +9,15 @@ datasource db {
 }
 
 model User {
-id              Int     @id @default(autoincrement())
-name            String?  
-email           String?  @unique
-number          String  @unique
-password        String  
-balance         Balance[]
-onRamp          OnRamp[]
-transaction     Transaction[] 
+id                    Int     @id @default(autoincrement())
+name                  String?  
+email                 String?  @unique
+number                String  @unique
+password              String  
+balance               Balance[]
+onRamp                OnRamp[]
+sentTransaction       Transaction[]  @relation(name: "FromUserRelation")
+receivedTransaction   Transaction[]  @relation(name: "ToUserRelation")
 }
 
 model Merchant {
@@ -46,16 +47,16 @@ amount   Int
 }
 
 model Transaction {
-  id        Int   @id  @default(autoincrement())
-  userId    Int
-  user      User @relation(fields: [userId], references: [id])
-  amount    Int
-  type      transactionType
-  from      String
-  to        String
-  startDate DateTime
-  status    transactionStatus
-  remark    String?
+  id              Int   @id  @default(autoincrement())
+  amount          Int
+  type            transactionType
+  fromUserId      Int
+  toUserId        Int
+  fromUser        User @relation(name: "FromUserRelation", fields: [fromUserId] , references: [id])  
+  toUser          User @relation(name: "ToUserRelation",fields: [toUserId], references: [id])
+  startDate       DateTime
+  status          transactionStatus
+  remark          String?
 }
 
 enum AuthType {
