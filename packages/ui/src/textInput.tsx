@@ -10,8 +10,8 @@ export const TextInput = ({
     label: string;
 }) => {
     return (
-        <div className=" bg-black p-5 mt-5">
-            <label className="block text-white mb-2 text-sm font-medium text-gray-900">First Name</label>
+        <div className=" bg-black p-5 ">
+            <label className="block text-white mb-2 text-sm font-medium text-gray-900">{label}</label>
             <input
              style={{ backgroundColor: "#27272A" }}
              onChange={(e) => onChange(e.target.value)}

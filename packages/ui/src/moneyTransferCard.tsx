@@ -7,7 +7,7 @@ export function MoneyTransferCard ({title, children}: {
 }){
     return(
     <div className="bg-black p-5  w-full ">
-            <div className="text-zinc-200 flex justify-center text-xl font-semibold">
+            <div className="text-zinc-200 flex justify-center text-xl font-semibold mb-5">
                     {title}
             </div>
             {children}
