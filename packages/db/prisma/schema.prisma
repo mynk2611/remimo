@@ -9,14 +9,14 @@ datasource db {
 }
 
 model User {
-id       Int     @id @default(autoincrement())
-name     String?  
-email    String?  @unique
-number   String  @unique
-password String  
-balance  Balance[]
-onRamp   OnRamp[]
-
+id              Int     @id @default(autoincrement())
+name            String?  
+email           String?  @unique
+number          String  @unique
+password        String  
+balance         Balance[]
+onRamp          OnRamp[]
+transaction     Transaction[] 
 }
 
 model Merchant {
@@ -45,6 +45,18 @@ token    String  @unique
 amount   Int
 }
 
+model Transaction {
+  id        Int   @id  @default(autoincrement())
+  userId    Int
+  user      User @relation(fields: [userId], references: [id])
+  amount    Int
+  type      transactionType
+  from      String
+  to        String
+  startDate DateTime
+  status    transactionStatus
+  remark    String?
+}
 
 enum AuthType {
   Google
@@ -55,4 +67,14 @@ enum onrampStatus {
   pending
   success
   failure
+}
+
+enum transactionStatus {
+  success
+  failure
+}
+
+enum transactionType {
+  Credit
+  Debit
 }
