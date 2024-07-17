@@ -7,6 +7,7 @@ import { LockedBalance } from "../../../components/LockedBalance";
 import { UnlockedBalance } from "../../../components/UnlockedBalance";
 import { AppbarClient } from "../../../components/appbarClient";
 import { BankToWalletTxns } from "../../../components/BankToWalletTxns";
+import { P2Ptxns } from "../../../components/P2Ptxns";
 
 
 async function getBalance() {
@@ -39,7 +40,7 @@ async function getBankTransactions(){
 
 async function getPhoneTransaction(){
   const session = await getServerSession(authOptions)
-  const userId = Number(session?.userr?.id);
+  const userId = Number(session?.user?.id);
 
   const sentTransaction = await prisma.transaction.findMany({
     where : {
@@ -70,11 +71,11 @@ async function getPhoneTransaction(){
     status: t.status,
     date: t.startDate,
     type: t.type,
-    remark: t.remark,
+    remark: t.remark || "",
     fromUser: t.fromUserId,
     toUser: t.toUserId,
-    fromUserName: t.fromUser.name,
-    toUserName: t.toUser.name
+    fromUserName: t.fromUser.name || "",
+    toUserName: t.toUser.name || ""
   })); 
 
 }
@@ -103,8 +104,14 @@ export default async function dashboard() {
 
           </div>
 
-          <div className="w-3/5">
-            <BankToWalletTxns transactions={BankTransactions}/>
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-6">
+                <P2Ptxns transactions={PhoneTransaction} />          
+            </div>
+
+            <div className="col-span-6">
+              <BankToWalletTxns transactions={BankTransactions}/>
+            </div>
           </div>
         </div>
       </div>

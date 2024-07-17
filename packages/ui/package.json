@@ -17,8 +17,8 @@
     "./background-boxes" : "./src/background-boxes.tsx",
     "./moneyTransferCard" : "./src/moneyTransferCard.tsx",
     "./textInput" : "./src/textInput.tsx",
-    "./select" : "./src/select.tsx"
-
+    "./select" : "./src/select.tsx",
+    "./phoneCard" : "./src/phoneCard.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
