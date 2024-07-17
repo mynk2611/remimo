@@ -6,7 +6,7 @@ import Card from "@repo/ui/card";
 import { LockedBalance } from "../../../components/LockedBalance";
 import { UnlockedBalance } from "../../../components/UnlockedBalance";
 import { AppbarClient } from "../../../components/appbarClient";
-import { BankTransfer } from "../../../components/BankToWalletTxns";
+import { BankToWalletTxns } from "../../../components/BankToWalletTxns";
 
 
 async function getBalance() {
@@ -22,14 +22,14 @@ async function getBalance() {
   }
 }
 
-async function getTransactions(){
+async function getBankTransactions(){
   const session = await getServerSession(authOptions)
-  const transactions = await prisma.onRamp.findMany({
+  const BankTransactions = await prisma.onRamp.findMany({
     where : {
       userId : Number(session?.user?.id)
     }
   });
-  return transactions.map(t => ({
+  return BankTransactions.map(t => ({
     amount : t.amount,
     status : t.status,
     date : t.startDate,
@@ -37,9 +37,52 @@ async function getTransactions(){
   }));
 }
 
+async function getPhoneTransaction(){
+  const session = await getServerSession(authOptions)
+  const userId = Number(session?.userr?.id);
+
+  const sentTransaction = await prisma.transaction.findMany({
+    where : {
+      fromUserId : userId
+    },
+    include :{
+      fromUser : true,
+      toUser : true
+    }
+  })
+
+  const receivedTransaction = await prisma.transaction.findMany({
+    where : {
+      toUserId : userId 
+    },
+    include : {
+      fromUser : true,
+      toUser : true 
+    }
+  })
+
+  const allTransactions = [...sentTransaction, ...receivedTransaction];
+
+  allTransactions.sort((a,b) => b.startDate.getTime() - a.startDate.getTime());
+
+  return allTransactions.map(t => ({
+    amount: t.amount,
+    status: t.status,
+    date: t.startDate,
+    type: t.type,
+    remark: t.remark,
+    fromUser: t.fromUserId,
+    toUser: t.toUserId,
+    fromUserName: t.fromUser.name,
+    toUserName: t.toUser.name
+  })); 
+
+}
+
 export default async function dashboard() {
   const balance = await getBalance();
-  const transactions = await getTransactions();
+  const BankTransactions = await getBankTransactions();
+  const PhoneTransaction = await getPhoneTransaction();
 
   return (
     <div className="spotlight-bg h-max ">
@@ -61,7 +104,7 @@ export default async function dashboard() {
           </div>
 
           <div className="w-3/5">
-            <BankTransfer transactions={transactions}/>
+            <BankToWalletTxns transactions={BankTransactions}/>
           </div>
         </div>
       </div>

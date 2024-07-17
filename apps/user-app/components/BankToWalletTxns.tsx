@@ -2,7 +2,7 @@ import { BankCard } from "@repo/ui/bankCard"
 import { TransferCard } from "@repo/ui/transferCard"
 import { onrampStatus } from "@prisma/client"
 
-export function BankTransfer({ transactions }: {
+export function BankToWalletTxns({ transactions }: {
     transactions: {
         amount: number,
         status: onrampStatus,
