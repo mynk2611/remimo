@@ -13,7 +13,7 @@ interface StatusCardProps {
 const StatusCard: React.FC<StatusCardProps> = ({ status, dateRange, color, gradientFrom, gradientTo }) => {
     return (
         <motion.div
-            className={`relative w-20 h-10 rounded-lg shadow-lg  bg-gradient-to-r ${gradientFrom} ${gradientTo} text-black overflow-hidden`}
+            className={`relative w-16 h-8 rounded-lg shadow-lg  bg-gradient-to-r ${gradientFrom} ${gradientTo} text-black overflow-hidden`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -29,7 +29,7 @@ const StatusCard: React.FC<StatusCardProps> = ({ status, dateRange, color, gradi
             </div>
             <div className='flex flex-col justify-center h-full'>
                 <div className="relative z-10 flex justify-center">
-                    <div className='flex flex-col justify-center  text-black text-sm font-semibold'>
+                    <div className='flex flex-col justify-center  text-black text-xs font-semibold'>
                         {status}
                     </div>
                 </div>
