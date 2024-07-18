@@ -30,6 +30,9 @@ async function getBankTransactions(){
       userId : Number(session?.user?.id)
     }
   });
+
+  BankTransactions.sort((a,b) => b.startDate.getTime() - a.startDate.getTime());
+
   return BankTransactions.map(t => ({
     amount : t.amount,
     status : t.status,
