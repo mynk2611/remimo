@@ -1,5 +1,6 @@
 import prisma from "@repo/db/client";
 import express from "express";
+import { transactionStatus } from "@prisma/client";
 
 const app = express();
 
@@ -9,11 +10,13 @@ app.post("/hdfcWebhook", async (req, res) => {
     const paymentInfo : {
         token : string,
         amount : string,
-        userId : string
+        userId : string,
+        status : transactionStatus
     } = {
         token : req.body.token,
         amount : req.body.amount,   
-        userId : req.body.user_Identifier
+        userId : req.body.user_Identifier,
+        status : req.body.status
     }
 
     try {
@@ -33,10 +36,14 @@ app.post("/hdfcWebhook", async (req, res) => {
                     token : paymentInfo.token
                 },
                 data : {
-                    status : "success"
+                    status : paymentInfo.status
                 }
             })         
-        ])
+        ]);
+        res.json({
+            message : "Captured"
+        })
+        
     } catch(e){
         console.error(e);
         res.status(411).json({
