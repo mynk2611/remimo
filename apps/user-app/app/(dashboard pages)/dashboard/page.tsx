@@ -8,6 +8,8 @@ import { UnlockedBalance } from "../../../components/UnlockedBalance";
 import { AppbarClient } from "../../../components/appbarClient";
 import { BankToWalletTxns } from "../../../components/BankToWalletTxns";
 import { P2Ptxns } from "../../../components/P2Ptxns";
+import { transactionType } from "@prisma/client"; 
+import { DashboardAppbarClient } from "../../../components/DashboardAppbarClient";
 
 
 async function getBalance() {
@@ -73,7 +75,7 @@ async function getPhoneTransaction(){
     amount: t.amount,
     status: t.status,
     date: t.startDate,
-    type: t.type,
+    type: t.fromUserId === userId ? transactionType.Debit : transactionType.Credit,
     remark: t.remark || "",
     fromUser: t.fromUserId,
     toUser: t.toUserId,
