@@ -10,6 +10,8 @@ import { BankToWalletTxns } from "../../../components/BankToWalletTxns";
 import { P2Ptxns } from "../../../components/P2Ptxns";
 import { transactionType } from "@prisma/client"; 
 import { DashboardAppbarClient } from "../../../components/DashboardAppbarClient";
+import { BalancesCards } from "../../../components/BalanceCards";
+import { AllTxns } from "../../../components/AllTxns";
 
 
 async function getBalance() {
@@ -92,32 +94,12 @@ export default async function dashboard() {
 
   return (
     <div className="spotlight-bg h-max ">
-      <div className="flex justify-center">
-        <div className="w-10/12 flex justify-center mt-3">
-          <AppbarClient />
-        </div>
-      </div>
+      <DashboardAppbarClient />
+      
       <div className="flex justify-center h-min">
-        <div className="border rounded-2xl border-zinc-600 p-10 mt-6 mx-4 w-11/12">
-          <div className="flex justify-evenly p-4 mb-20">
-
-            <WalletBalance amount={balance.amount} />
-
-            <LockedBalance locked={balance.locked} />
-
-            <UnlockedBalance unlocked={balance.amount - balance.locked} />
-
-          </div>
-
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-6">
-                <P2Ptxns transactions={PhoneTransaction} />          
-            </div>
-
-            <div className="col-span-6">
-              <BankToWalletTxns transactions={BankTransactions}/>
-            </div>
-          </div>
+        <div className="border rounded-2xl border-zinc-600 p-10 mt-24 mx-4 w-11/12">
+          <BalancesCards balance={balance} />
+          <AllTxns PhoneTransactions={PhoneTransaction} BankTransactions={BankTransactions} />
         </div>
       </div>
     </div>
