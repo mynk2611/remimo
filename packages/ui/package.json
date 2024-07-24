@@ -18,7 +18,8 @@
     "./moneyTransferCard" : "./src/moneyTransferCard.tsx",
     "./textInput" : "./src/textInput.tsx",
     "./select" : "./src/select.tsx",
-    "./phoneCard" : "./src/phoneCard.tsx"
+    "./phoneCard" : "./src/phoneCard.tsx",
+    "./navbar" : "./src/navbar.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
