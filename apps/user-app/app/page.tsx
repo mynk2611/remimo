@@ -1,28 +1,33 @@
-"use client";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+"use client"
+import { getServerSession } from 'next-auth';
+import { DashboardAppbarClient } from '../components/DashboardAppbarClient';
+import { authOptions } from './lib/auth';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
-export default function HomePage() {
-    const { data: session, status } = useSession();
-    const router = useRouter();
+export default function Page() {
+  const router = useRouter();
 
-    useEffect(() => {
-        if (status === "authenticated") {
-            router.push("/dashboard");
-        }
-    }, [status, router]);
+  // Assuming you're using next-auth useSession for client-side session handling
+  const { data: session, status } = useSession();
 
-    if (status === "loading") {
-        return <div>Loading...</div>;
-    } else {
-        return (
-            <div>
-                <h1>Home Page</h1>
-                <button onClick={() => router.push("/signup")}>Signup</button>
-                <br />
-                <button onClick={() => router.push("/api/auth/signin")}>Signin</button>
-            </div>
-        );
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/dashboard");
     }
+  }, [status, router]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="spotlight-bg h-max">
+      <DashboardAppbarClient/>
+      <div className="rounded-full text-white  ">
+        
+      </div>
+    </div>
+  );
 }
