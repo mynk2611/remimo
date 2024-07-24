@@ -5,11 +5,12 @@ import { authOptions } from './lib/auth';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import Image from "next/image"
+import { LandingFeatureOne } from '../components/FeatureSectionOne';
 
 export default function Page() {
   const router = useRouter();
 
-  // Assuming you're using next-auth useSession for client-side session handling
   const { data: session, status } = useSession();
 
   useEffect(() => {
@@ -24,10 +25,8 @@ export default function Page() {
 
   return (
     <div className="spotlight-bg h-max">
-      <DashboardAppbarClient/>
-      <div className="rounded-full text-white  ">
-        
-      </div>
+      <DashboardAppbarClient />
+      <LandingFeatureOne/>
     </div>
   );
 }
