@@ -14,7 +14,7 @@ export default function WalletBalance({ amount }: { amount: number }) {
         width= "w-[22rem]"
         height="h-52"
         mt="mt-20"
-        icon={<WalletIcon/>}
+        icon={<WalletIcon className="size-28 mt-6"/>}
       />
     </div>
   );
