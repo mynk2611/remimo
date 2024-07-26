@@ -1,4 +1,4 @@
-export function WalletIcon(){
+export function WalletIcon({className} : {className : string} ){
     return (
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@ export function WalletIcon(){
         stroke="currentColor"
         width="40"    // Change these values to your desired width and height
         height="20"
-        className="size-28 mt-6"
+        className={className}
       >
         <path
           strokeLinecap="round"
