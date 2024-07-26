@@ -19,7 +19,8 @@
     "./textInput" : "./src/textInput.tsx",
     "./select" : "./src/select.tsx",
     "./phoneCard" : "./src/phoneCard.tsx",
-    "./navbar" : "./src/navbar.tsx"
+    "./navbar" : "./src/navbar.tsx",
+    "./receiptIcon" : "./src/receiptIcon.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
