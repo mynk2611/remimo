@@ -85,7 +85,7 @@ const CardCarousel: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-64 overflow-hidden flex justify-center" style={{ perspective: '1000px' }}>
+    <div className="relative w-full h-64 mb-20 overflow-hidden flex justify-center" style={{ perspective: '1000px' }}>
       <Card
         key={0}
         style={getCardStyle(0)}
