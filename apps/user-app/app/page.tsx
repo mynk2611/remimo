@@ -1,13 +1,11 @@
 "use client"
-import { getServerSession } from 'next-auth';
 import { DashboardAppbarClient } from '../components/DashboardAppbarClient';
-import { authOptions } from './lib/auth';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import Image from "next/image"
 import { LandingFeatureOne } from '../components/FeatureSectionOne';
 import CardCarousel from '../components/CardCarousel';
+import { FeatureSectionThree } from '../components/FeatureSectionThree';
 
 export default function Page() {
   const router = useRouter();
@@ -40,6 +38,7 @@ export default function Page() {
         </div>
       </div>
       <CardCarousel />
+      <FeatureSectionThree/>
     </div>
   );
 }
