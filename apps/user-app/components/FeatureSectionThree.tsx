@@ -8,7 +8,7 @@ export function FeatureSectionThree() {
   return (
     <LampContainer>
       <motion.div
-        initial={{ opacity: 0.5, y: 100 }}
+        initial={{ opacity: 0.5, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
