@@ -4,7 +4,9 @@ export function TransferCard({title, children}: {title: string, children: React.
             <div className="text-white font-semibold text-lg mb-6 p-5 w-full border-b border-zinc-500 pb-4">
                 {title}
             </div>
-            {children}
+            <div className="max-h-96 overflow-y-auto hover:overflow-y-scroll">
+                {children}
+            </div>
         </div>
     )
 }
