@@ -13,11 +13,20 @@ export const authOptions = {
           },
           // TODO: User credentials type from next-aut
           async authorize(credentials: any) {
+            if (!credentials) {
+                return null ;
+            }
+
+            const { phone , password } = credentials;
+
+            if( !phone || !password ) {
+                return null;
+            }
+
             // Do zod validation, OTP validation here
-            const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
                 where: {
-                    number: credentials.phone
+                    number: phone,
                 }
             });
 
@@ -32,24 +41,6 @@ export const authOptions = {
                 }
                 return null;
             }
-
-            try {
-                const user = await db.user.create({
-                    data: {
-                        number: credentials.phone,
-                        password: hashedPassword
-                    }
-                });
-            
-                return {
-                    id: user.id.toString(),
-                    name: user.name,
-                    email: user.number
-                }
-            } catch(e) {
-                console.error(e);
-            }
-
             return null
           },
         })
@@ -62,6 +53,9 @@ export const authOptions = {
 
             return session
         }
+    },
+    pages : {
+        signIn : '/login'
     }
   }
  
