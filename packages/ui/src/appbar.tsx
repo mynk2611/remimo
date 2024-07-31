@@ -31,7 +31,7 @@ export const Appbar = ({
             <div>
                 <div className="flex flex-col justify-center ">
                     <Button onClick={ user ? onSignout : onSignin }>
-                        {user ? "log out" : "Signup"}
+                        {user ? "log out" : "log in"}
                     </Button>
                 </div>
             </div>
