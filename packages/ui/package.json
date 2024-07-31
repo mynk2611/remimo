@@ -21,7 +21,9 @@
     "./phoneCard" : "./src/phoneCard.tsx",
     "./navbar" : "./src/navbar.tsx",
     "./receiptIcon" : "./src/receiptIcon.tsx",
-    "./lampContainer" : "./src/lampContainer.tsx"
+    "./lampContainer" : "./src/lampContainer.tsx",
+    "./input" : "./src/input.tsx",
+    "./label" : "./src/label.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
