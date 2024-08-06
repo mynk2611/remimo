@@ -5,6 +5,7 @@ import { TextInput } from "@repo/ui/textInput"
 import { Select } from "@repo/ui/select"
 import { useState } from "react";
 import { createonRampTransactions } from "../app/lib/actions/createonRampTransactions"
+import { useRouter } from "next/navigation"
 
 const SUPPORTED_BANKS = [{
     name: "HDFC Bank",
@@ -15,6 +16,7 @@ const SUPPORTED_BANKS = [{
 }];
 
 export function AddMoney() {
+    const route = useRouter();
     const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
     const [value, setValue] = useState(0);
     const [provider, setProvider] = useState( SUPPORTED_BANKS[0]?.name || "");
@@ -49,6 +51,7 @@ export function AddMoney() {
                         <button className="shadow-[inset_0_0_0_2px_#616467] text-white px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white  transition duration-200"
                         onClick={async()=>{
                             await createonRampTransactions(provider, value);
+                            window.location.href = "/dashboard";
                         }}>
                             Add to Wallet
                         </button>
