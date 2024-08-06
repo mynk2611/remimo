@@ -26,13 +26,13 @@ export default function Page() {
     <div className="spotlight-bg h-max">
       <DashboardAppbarClient />
       <LandingFeatureOne />
-      <div className='pt-40 flex justify-center '>
+      <div className='relative pt-40 flex justify-center '>
         <div className=''>
           <div className='text-6xl text-white font-bold'>
             CHECK OUT YOUR CARDS
           </div>
 
-          <div className='pt-8 text-2xl text-white pb-20 flex justify-center'>
+          <div className='pt-8 text-2xl text-white pb-20 flex justify-center mb-10'>
             Get to know about your balance cards & track your balance
           </div>
         </div>
