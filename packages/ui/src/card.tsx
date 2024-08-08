@@ -6,7 +6,7 @@ interface CardProps {
   key ?: number ;
   style ?: any;
   title: string;
-  value: string;
+  value: number;
   dateRange?: string;
   color: string;
   gradientFrom: string;
@@ -46,7 +46,7 @@ const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color,
           <div>
                {icon}         
           </div>
-          <div className={`${mt} text-3xl font-bold`}>{value}</div>
+          <div className={`${mt} text-3xl font-bold`}>${value}</div>
         </div>
         {/* {dateRange && <p className="text-sm">{dateRange}</p>} */}
       </div>

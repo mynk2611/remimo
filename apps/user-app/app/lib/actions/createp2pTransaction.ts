@@ -7,6 +7,7 @@ import prisma from "@repo/db/client";
 export async function createp2pTransaction(to: string, amount: number) {
     const session = await getServerSession(authOptions)
     const from = Number(session?.user?.id)
+    const transferAmount = amount * 100
 
     if (!from) {
         return {
@@ -47,7 +48,7 @@ export async function createp2pTransaction(to: string, amount: number) {
             },
             data: {
                 amount: {
-                    decrement: amount
+                    decrement: transferAmount
                 }
             }
         })
@@ -58,7 +59,7 @@ export async function createp2pTransaction(to: string, amount: number) {
             },
             data: {
                 amount: {
-                    increment: amount
+                    increment: transferAmount
                 }
             }
         })

@@ -41,7 +41,7 @@ export function BankCard({transactions}:{transactions:{
 
         <div className="flex flex-col justify-center ">
                 <div className="flex justify-end">
-                     $ {transactions.amount}
+                     $ {transactions.amount/100}
                 </div>
         </div>
 
