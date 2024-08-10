@@ -1,13 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
 import prisma from "@repo/db/client";
-import WalletBalance from "../../../components/WalletBalance";
-import Card from "@repo/ui/card";
-import { LockedBalance } from "../../../components/LockedBalance";
-import { UnlockedBalance } from "../../../components/UnlockedBalance";
-import { AppbarClient } from "../../../components/appbarClient";
-import { BankToWalletTxns } from "../../../components/BankToWalletTxns";
-import { P2Ptxns } from "../../../components/P2Ptxns";
 import { transactionType } from "@prisma/client"; 
 import { DashboardAppbarClient } from "../../../components/DashboardAppbarClient";
 import { BalancesCards } from "../../../components/BalanceCards";
