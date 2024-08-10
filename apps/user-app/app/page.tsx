@@ -7,6 +7,9 @@ import { LandingFeatureOne } from '../components/FeatureSectionOne';
 import CardCarousel from '../components/CardCarousel';
 import { FeatureSectionThree } from '../components/FeatureSectionThree';
 
+
+
+
 export default function Page() {
   const router = useRouter();
 
