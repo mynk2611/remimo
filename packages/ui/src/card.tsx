@@ -6,7 +6,7 @@ interface CardProps {
   key ?: number ;
   style ?: any;
   title: string;
-  value: number;
+  value: number | string;
   dateRange?: string;
   color: string;
   gradientFrom: string;
