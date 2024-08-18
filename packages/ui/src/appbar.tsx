@@ -1,6 +1,5 @@
-import { AppbarItem } from "./appbarItem";
 import { Button } from "./button";
-import { Navbar } from "./navbar";
+import { MenuIcon } from "./menuIcon";
 
 interface AppbarProps {
     user?: {
@@ -8,8 +7,8 @@ interface AppbarProps {
     },
     // TODO: can u figure out what the type should be here?
 
-    onSignout: ()=>void;
-    onSignin : ()=>void;
+    onSignout: () => void;
+    onSignin: () => void;
     children?: React.ReactNode;
 }
 
@@ -20,8 +19,8 @@ export const Appbar = ({
     onSignin
 }: AppbarProps) => {
     return (
-        <div className="flex justify-between border-b border-black px-10 bg-customblack py-2 sticky top-0 z-50 w-full">
-            <div className="flex">
+        <div className="px-5 flex justify-between border-b border-black sm:px-10 bg-customblack py-2 sticky top-0 z-50 w-full">
+            <div className="flex flex-grow justify-center ml-20 sm:ml-0 sm:flex-grow-0">
                 <div className="text-base flex flex-col justify-center text-white font-semibold mr-6">
                     Remimo
                 </div>
@@ -29,8 +28,11 @@ export const Appbar = ({
             </div>
 
             <div>
-                <div className="flex flex-col justify-center ">
-                    <Button onClick={ user ? onSignout : onSignin }>
+                <div className="block sm:hidden">
+                    <MenuIcon />
+                </div>
+                <div className="hidden sm:block flex flex-col justify-center ">
+                    <Button onClick={user ? onSignout : onSignin}>
                         {user ? "log out" : "log in"}
                     </Button>
                 </div>

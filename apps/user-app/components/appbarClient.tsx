@@ -26,7 +26,7 @@ export const AppbarClient = () => {
     },[])
 
     return(
-    <div className={` transition-all duration-300 ${isScrolled ? 'w-9/12' : 'w-full'}`}>
+    <div className={` transition-all duration-300 ${isScrolled ? 'w-full sm:w-9/12' : 'w-full'}`}>
         <Appbar onSignout={async()=>{
             await signOut({redirect : false});
             route.push("/")
