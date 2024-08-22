@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 export function WalletIcon({className} : {className : string} ){
     return (
         <svg
@@ -6,9 +8,8 @@ export function WalletIcon({className} : {className : string} ){
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        width="40"    // Change these values to your desired width and height
-        height="20"
-        className={className}
+
+        className= "size-20 mt-2 sm:size-22 sm:mt-9 md:size-24 md:mt-8 lg:size-24 lg:mt-10 xl:size-28 xl:mt-14"
       >
         <path
           strokeLinecap="round"
