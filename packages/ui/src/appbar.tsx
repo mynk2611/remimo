@@ -24,14 +24,16 @@ export const Appbar = ({
         <div className="text-base flex flex-col justify-center text-white font-semibold mr-6">
           Remimo
         </div>
-        {children}
+        <div className="hidden md:block">
+          {children}
+        </div>
       </div>
 
       <div>
-        <div className="block sm:hidden">
+        <div className="block md:hidden">
           <MenuIcon />
         </div>
-        <div className="hidden sm:block sm:flex items-center space-x-6 ">
+        <div className="hidden md:block md:flex items-center space-x-6 ">
           <div className="text-zinc-400 text-lg ">
             Hi {user?.name}!
           </div>
