@@ -3,17 +3,17 @@ import { MoneyIcon } from "@repo/ui/moneyIcon";
 
 export function UnlockedBalance({ unlocked }: { unlocked: number }) {
   return (
-    <div className="h-52 flex flex-col justify-center">
+    <div className="md:h-52 flex flex-col justify-center">
       <Card
         title="Unlocked Balance"
-        value={unlocked/100}
+        value={unlocked / 100}
         color="green"
         gradientFrom="from-green-500"
         gradientTo="to-teal-500"
-        width="w-72"
-        height="h-40"
+        width="w-[16rem]"
+        height="h-36"
         mt="mt-10"
-        icon={<MoneyIcon/>}
+        icon={<MoneyIcon className="size-20 mt-5" />}
       />
     </div>
   );

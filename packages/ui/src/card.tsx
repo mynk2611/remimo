@@ -3,25 +3,25 @@
 import { motion } from 'framer-motion';
 
 interface CardProps {
-  key ?: number ;
-  style ?: any;
+  key?: number;
+  style?: any;
   title: string;
   value: number | string;
   dateRange?: string;
   color: string;
   gradientFrom: string;
   gradientTo: string;
-  width : string;
-  height : string;
-  icon : React.ReactNode;
-  mt : string
+  width: string;
+  height: string;
+  icon: React.ReactNode;
+  mt: string
 }
 
-const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color, gradientFrom, gradientTo, width ="w-64", height = "h-36", icon, mt }) => {
+const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color, gradientFrom, gradientTo, width = "w-64", height = "h-36", icon, mt }) => {
   return (
     <motion.div
       style={style}
-      className={`${ style ? "absolute" : "relative"} ${width} ${height} rounded-lg shadow-lg p-2 bg-gradient-to-r ${gradientFrom} ${gradientTo} ${style ? "border" : ""} text-white overflow-hidden`}
+      className={`${style ? "absolute" : "relative"} ${width} ${height} rounded-lg shadow-lg p-2 bg-gradient-to-r ${gradientFrom} ${gradientTo} ${style ? "border" : ""} text-white overflow-hidden`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -32,11 +32,11 @@ const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color,
       }}
     >
       {/* Spotlight effect */}
-      { style ? null : 
-      <div className="absolute inset-0 flex items-center justify-center">
-      <div className="spotlight"></div>
-    </div>
-    }
+      {style ? null :
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="spotlight"></div>
+        </div>
+      }
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-2">
           <h2 className="text-base sm:text-xl md:text-2xl font-bold">{title}</h2>
@@ -44,9 +44,9 @@ const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color,
 
         <div className='flex justify-between '>
           <div>
-               {icon}         
+            {icon}
           </div>
-          <div className={`${mt} text-xl sm:text-3xl font-bold`}>${value}</div>
+          <div className={`${mt} text-xl md:text-3xl font-bold`}>${value}</div>
         </div>
         {/* {dateRange && <p className="text-sm">{dateRange}</p>} */}
       </div>

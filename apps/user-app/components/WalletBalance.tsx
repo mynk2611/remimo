@@ -6,15 +6,15 @@ export default function WalletBalance({ amount }: { amount: number }) {
     <div>
       <Card
         title="Wallet"
-        value={amount/100}
+        value={amount / 100}
         color="purple"
         gradientFrom="from-pink-500"
         gradientTo="to-red-700"
         dateRange="Jan 1 - Jan 10"
-        width= "w-[22rem]"
-        height="h-52"
+        width="w-[18rem]"
+        height="h-40"
         mt="mt-20"
-        icon={<WalletIcon className="size-28 mt-6"/>}
+        icon={<WalletIcon className="size-20 mt-10" />}
       />
     </div>
   );
