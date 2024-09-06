@@ -35,14 +35,14 @@ export function BankCard({ transactions }: {
 
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 p-2 text-white hover:bg-zinc-800 relative text-zinc-600 ">
-      <div className="hidden sm:block flex flex-col justify-center ">
+      <div className="hidden sm:block flex flex-col justify-center md:text-sm font-semibold">
         <div className="flex ">
           {transactions.date.toDateString()}
         </div>
       </div>
 
       <div className="flex flex-col justify-center ">
-        <div className="flex sm:justify-end">
+        <div className="flex sm:justify-end md:justify-center">
           $ {transactions.amount / 100}
         </div>
       </div>

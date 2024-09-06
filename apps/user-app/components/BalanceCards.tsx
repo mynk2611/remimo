@@ -9,7 +9,7 @@ export function BalancesCards({ balance }: {
   }
 }) {
   return (
-    <div className="flex flex-col items-center md:flex-row sm:justify-evenly p-0 md:p-4 mb-16 sm:mb-20 mt-10 sm:mt-14">
+    <div className="flex flex-col items-center md:flex-row sm:justify-evenly p-0 md:p-0 mb-16 sm:mb-20 mt-10 sm:mt-14">
 
       <WalletBalance amount={balance.amount} />
 

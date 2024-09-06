@@ -39,14 +39,14 @@ const Card: React.FC<CardProps> = ({ key, style, title, value, dateRange, color,
       }
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-2">
-          <h2 className="text-base sm:text-xl md:text-2xl font-bold">{title}</h2>
+          <h2 className="text-base sm:text-xl md:text-lg font-bold md:font-semibold">{title}</h2>
         </div>
 
         <div className='flex justify-between '>
           <div>
             {icon}
           </div>
-          <div className={`${mt} text-xl md:text-3xl font-bold`}>${value}</div>
+          <div className={`${mt} text-xl md:text-xl font-bold md:font-medium`}>${value}</div>
         </div>
         {/* {dateRange && <p className="text-sm">{dateRange}</p>} */}
       </div>

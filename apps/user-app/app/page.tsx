@@ -38,7 +38,7 @@ export default function Page() {
         </div>
       </div>
       <CardCarousel />
-      <FeatureSectionThree/>
+      <FeatureSectionThree />
     </div>
   );
 }
