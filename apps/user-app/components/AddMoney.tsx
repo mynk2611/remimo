@@ -26,7 +26,7 @@ export function AddMoney() {
       <div className="absolute inset-0 w-full h-full bg-zinc-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       <Boxes />
 
-      <div className={`relative w-10/12 md:w-7/12 lg:w-5/12 rounded-lg shadow-lg p-4 bg-black text-white overflow-hidden z-50`} >
+      <div className={`relative w-10/12 md:w-7/12 lg:w-5/12 rounded-lg shadow-lg p-4 bg-black text-white overflow-hidden z-40`} >
         <MoneyTransferCard title="Add Money">
           <TextInput
             label="Amount"
