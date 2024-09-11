@@ -6,6 +6,7 @@ import { cn } from "../lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { loginSchema } from "@repo/types/loginSchema"
 
 export default function Signup() {
   const router = useRouter();
@@ -16,6 +17,18 @@ export default function Signup() {
   // Added handleLogin function to handle form submission
   const handleLogin = async () => {
     setError("");
+
+    const validationResult = loginSchema.safeParse({ phoneNumber, password });
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      if (firstError) {
+        setError(firstError.message);
+      } else {
+        setError("An unknown validation error occurred.");
+      }
+      return;
+    }
 
     const res = await signIn("credentials", {
       phone: phoneNumber,
