@@ -8,7 +8,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { loginSchema } from "@repo/types/loginSchema"
 
-export default function Signup() {
+export default function Login() {
   const router = useRouter();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +46,7 @@ export default function Signup() {
   return (
     <div className="flex justify-center bg-black spotlight-bg">
       <div className="flex flex-col min-h-screen overflow-auto justify-center w-full ">
-        <div className="mt-10 relative border border-zinc-600 my-8 w-10/12 sm:w-6/12 mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black dark:bg-black">
+        <div className="mt-10 relative border border-zinc-600 my-8 w-10/12 md:w-6/12 lg:w-4/12 mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-black dark:bg-black">
           <div className="flex justify-center">
             <div>
               <h2 className="font-bold text-xl text-neutral-200 dark:text-neutral-200">
