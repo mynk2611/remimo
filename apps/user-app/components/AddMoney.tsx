@@ -6,6 +6,7 @@ import { Select } from "@repo/ui/select"
 import { useState } from "react";
 import { createonRampTransactions } from "../app/lib/actions/createonRampTransactions"
 import { useRouter } from "next/navigation"
+import { validateAmount } from "@repo/types/validateAmount"
 
 const SUPPORTED_BANKS = [{
   name: "HDFC Bank",
@@ -20,6 +21,7 @@ export function AddMoney() {
   const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
   const [value, setValue] = useState(0);
   const [provider, setProvider] = useState(SUPPORTED_BANKS[0]?.name || "");
+  const [error, setError] = useState<string>("")
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-zinc-800 flex flex-col items-center justify-center rounded-lg">
@@ -32,8 +34,11 @@ export function AddMoney() {
             label="Amount"
             onChange={(value) => {
               setValue(Number(value))
+              setError("")
             }}
             placeholder="Enter amount" />
+
+          {error && <p className="text-red-500 sm:pl-5 pb-4">{error}</p>}
 
           <div className="text-white w-full pt-3 sm:pl-5">
             Bank
@@ -50,8 +55,16 @@ export function AddMoney() {
           <div className="flex justify-center mt-10">
             <button className="shadow-[inset_0_0_0_2px_#616467] text-white px-10 sm:px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white  transition duration-200"
               onClick={async () => {
+                const { success, error } = validateAmount(value)
+
+                if (!success) {
+                  setError(error || "An unknown error occurred")
+                  console.log(error)
+                  return;
+                }
+
                 await createonRampTransactions(provider, value);
-                window.location.href = "/dashboard";
+                route.push("./dashboard")
               }}>
               Add to Wallet
             </button>
