@@ -16,6 +16,9 @@
     "zod": "^3.23.8"
   },
   "exports": {
-    "./loginSchema": "./src/index.ts"
+    "./loginSchema": "./src/loginSchema.ts",
+    "./signupSchema": "./src/signupSchema.ts",
+    "./validateAmount": "./src/amountSchema.ts",
+    "./p2pTransactionSchema": "./src/p2pTransactionSchema.ts"
   }
 }
