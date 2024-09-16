@@ -23,7 +23,10 @@
     "./receiptIcon": "./src/receiptIcon.tsx",
     "./lampContainer": "./src/lampContainer.tsx",
     "./input": "./src/input.tsx",
-    "./label": "./src/label.tsx"
+    "./label": "./src/label.tsx",
+    "./githubIcon": "./src/githubIcon.tsx",
+    "./twitterIcon": "./src/twitterIcon.tsx",
+    "./linkdinIcon": "./src/linkdinIcon.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
