@@ -216,7 +216,7 @@ const CardCarousel: React.FC = () => {
         width="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96"
         height="h-32 sm:h-40 md:h-44 lg:h-48 xl:h-56 "
         mt="mt-10 sm:mt-16 md:mt-16 lg:mt-20 xl:mt-28"
-        icon={<WalletIcon className="size-24 mt-2" />}
+        icon={<WalletIcon className="size-28 mt-16" />}
       />
     </div>
   );
