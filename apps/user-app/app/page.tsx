@@ -1,28 +1,20 @@
-"use client"
 import { DashboardAppbarClient } from '../components/DashboardAppbarClient';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 import { LandingFeatureOne } from '../components/FeatureSectionOne';
 import CardCarousel from '../components/CardCarousel';
 import { FeatureSectionThree } from '../components/FeatureSectionThree';
 import { Footer } from '../components/Footer';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from './lib/auth';
 
-export default function Page() {
-  const router = useRouter();
+export default async function Page() {
+  const session = await getServerSession(authOptions)
 
-  const { data: session, status } = useSession();
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/dashboard");
-    }
-  }, [status, router]);
-
-  if (status === "loading") {
-    return <div>Loading...</div>;
+  if (session) {
+    console.log("hi from getserversession")
+    redirect("/dashboard")
+    return null
   }
-
   return (
     <div>
       <div className="spotlight-bg h-max">
