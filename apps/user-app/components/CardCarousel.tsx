@@ -10,8 +10,12 @@ const CardCarousel: React.FC = () => {
   const [position, setPosition] = useState(0);
   const [transitioning, setTransitioning] = useState(-1);
   const [delayedTransitioning, setDelayedTransitioning] = useState(-1);
+  const [screenWidth, setScreenWidth] = useState<number>(0); // Store screen width in state
 
   useEffect(() => {
+    // Set screen width after mounting (client-side)
+    setScreenWidth(window.innerWidth);
+
     const interval = setInterval(() => {
       setTransitioning(position);
       setTimeout(() => {
@@ -23,15 +27,17 @@ const CardCarousel: React.FC = () => {
         setDelayedTransitioning(-1);
       }, 1000);
     }, 3000);
+
     return () => clearInterval(interval);
   }, [position]);
 
   const getCardStyle = (index: number) => {
+
     const totalCards = 4;
     const adjustedIndex = (index - position + totalCards) % totalCards;
 
     // Responsive xOffset and scale values based on screen size
-    const screenWidth = window.innerWidth;
+    if (screenWidth === 0) return {}; // Prevent running on the server
     let xOffset = 0;
     let scale = 1;
     let zIndex = 0;
