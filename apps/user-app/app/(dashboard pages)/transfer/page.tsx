@@ -1,8 +1,17 @@
+import { getServerSession } from "next-auth";
 import { AddMoney } from "../../../components/AddMoney";
 import { DashboardAppbarClient } from "../../../components/DashboardAppbarClient";
 import { Footer } from "../../../components/Footer";
+import { authOptions } from "../../lib/auth";
+import { redirect } from "next/navigation";
 
-export default function Transfer() {
+export default async function Transfer() {
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect('/login')
+    return null
+  }
   return (
     <div>
       <div className="spotlight-bg h-max">

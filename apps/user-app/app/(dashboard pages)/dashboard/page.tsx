@@ -5,10 +5,20 @@ import { getBalance } from "../../../utils/getBalance"
 import { getBankTransactions } from "../../../utils/getBankTransactions";
 import { getPhoneTransaction } from "../../../utils/getPhoneTransactions";
 import { Footer } from "../../../components/Footer";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation"
+import { authOptions } from "../../lib/auth";
 
 
 
 export default async function dashboard() {
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect('/login')
+    return null
+  }
+
   const balance = await getBalance();
   const BankTransactions = await getBankTransactions();
   const PhoneTransaction = await getPhoneTransaction();
