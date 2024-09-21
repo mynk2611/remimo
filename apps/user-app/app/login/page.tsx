@@ -39,7 +39,7 @@ export default function Login() {
     if (res?.error) {
       setError("Invalid phone number or password");
     } else {
-      router.push("/");
+      router.push("/dashboard");
     }
   };
 
