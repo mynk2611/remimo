@@ -1,6 +1,3 @@
-"use client"
-import { TextInput } from "./textInput"
-
 export function MoneyTransferCard({ title, children }: {
   title: string
   children?: React.ReactNode
