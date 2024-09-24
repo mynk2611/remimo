@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Remimo",
-  description: "Simple wallet app",
+  description: "Pay, get paid and add funds to your wallet with ease",
 };
 
 export default function RootLayout({
