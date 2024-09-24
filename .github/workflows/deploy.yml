@@ -39,4 +39,4 @@ jobs:
             sudo docker pull mame2611/remimo:latest
             sudo docker stop web-app || true
             sudo docker rm web-app || true
-            sudo docker run -d -p 3005:3000 --name web-app mame2611/remimo:latest
+            sudo docker run -d -p 3005:3000 --name web-app -e DATABASE_URL=${{ secret.DATABASE_URL }} mame2611/remimo:latest
