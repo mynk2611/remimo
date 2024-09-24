@@ -7,7 +7,7 @@ import { Provider } from "../provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wallet",
+  title: "Remimo",
   description: "Simple wallet app",
 };
 
