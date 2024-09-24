@@ -33,7 +33,7 @@ npx prisma db seed
 npx prisma generate
 ```
 
-** Run locally**
+**Run locally**
 ```bash
 cd ../..
 npm run dev
