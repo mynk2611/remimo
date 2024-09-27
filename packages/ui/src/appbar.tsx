@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./button";
 import { MenuIcon } from "./menuIcon";
@@ -30,7 +30,21 @@ export const Appbar = ({
       <div className="px-5 flex justify-between border-b border-black sm:px-10 bg-customblack py-2 sticky top-0 z-50 w-full">
         <div className="flex flex-grow justify-center ml-20 sm:ml-0 sm:flex-grow-0">
           <div className="text-base flex flex-col justify-center text-white font-semibold mr-6">
-            Remimo
+            <div className="flex ">
+              <div className="sm:w-[20rem] sm:h-[16rem] md:w-[20rem] md:h-[16rem] xl:w-[4rem] xl:h-[3rem] relative overflow-visible">
+                <Image
+                  src="/logo.png"
+                  alt="People enjoying the app"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-3xl"
+
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                Remimo
+              </div>
+            </div>
           </div>
           <div className="hidden md:block">
             {children}
