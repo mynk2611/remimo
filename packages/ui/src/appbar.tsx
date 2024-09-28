@@ -31,7 +31,7 @@ export const Appbar = ({
         <div className="flex flex-grow justify-center ml-20 sm:ml-0 sm:flex-grow-0">
           <div className="text-base flex flex-col justify-center text-white font-semibold mr-6">
             <div className="flex ">
-              <div className="sm:w-[20rem] sm:h-[16rem] md:w-[20rem] md:h-[16rem] xl:w-[4rem] xl:h-[3rem] relative overflow-visible">
+              <div className="sm:w-[3rem] sm:h-[3rem] md:w-[3rem] md:h-[3rem] xl:w-[4rem] xl:h-[3rem] relative overflow-visible">
                 <Image
                   src="/logo.png"
                   alt="People enjoying the app"
