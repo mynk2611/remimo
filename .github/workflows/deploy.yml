@@ -25,6 +25,7 @@ jobs:
           file: ./docker/Dockerfile.userApp
           push: true
           tags: mame2611/remimo:latest
+          no-cache: true
 
       - name: Verify Docker image
         run: docker pull mame2611/remimo:latest
