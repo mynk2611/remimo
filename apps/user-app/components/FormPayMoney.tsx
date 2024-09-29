@@ -6,7 +6,7 @@ import { HandlePayMoneyButton } from "./HandlePayMoneyButton";
 import { HandlePayment } from "./HandlePayment";
 
 export function FormPayMoney() {
-  const { number, setNumber, amount, setAmount, errors, setErrors, handlePay } = HandlePayment();
+  const { setNumber, setAmount, errors, handlePay } = HandlePayment();
 
   return (
     <>
