@@ -4,11 +4,16 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json turbo.json ./
 
-COPY apps ./apps
-COPY packages ./packages
+COPY apps/user-app/package.json ./apps/user-app/package.json
+COPY apps/bank-webhook/package.json ./apps/bank-webhook/package.json
 
 RUN npm install
+
+COPY packages/db ./packages/db
 RUN npm run db:generate
+
+COPY apps ./apps
+COPY packages ./packages
 
 RUN npm run build
 
