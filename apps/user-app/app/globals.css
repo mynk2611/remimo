@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark background color */
+html, body {
+    background-color: #171717;
+    color: white; /* Optional, for readability */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .spotlight {
     width: 150%;
     height: 150%;
