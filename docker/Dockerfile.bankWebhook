@@ -15,6 +15,4 @@ RUN npm run db:generate
 COPY apps ./apps
 COPY packages ./packages
 
-RUN npm run build
-
-CMD ["npm", "run", "start-user-app"]
+CMD ["npm", "run", "start-bankwebhook"]

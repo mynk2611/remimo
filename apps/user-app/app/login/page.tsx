@@ -38,6 +38,7 @@ export default function Login() {
 
     if (res?.error) {
       setError("Invalid phone number or password");
+      console.error("Login error:", res.error);
     } else {
       router.push("/dashboard");
     }

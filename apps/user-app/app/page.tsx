@@ -11,7 +11,6 @@ export default async function Page() {
   const session = await getServerSession(authOptions)
 
   if (session) {
-    console.log("hi from getserversession")
     redirect("/dashboard")
     return null
   }

@@ -52,4 +52,6 @@ app.post("/hdfcWebhook", async (req, res) => {
   }
 })
 
-app.listen(3003);
+app.listen(3003, () => {
+  console.log("Server started at port 3003");
+});
