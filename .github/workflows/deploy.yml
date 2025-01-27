@@ -31,9 +31,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./docker/Dockerfile.bankwebhook
+          file: ./docker/Dockerfile.bankWebhook
           push: true
-          tags: mame2611/remimo-bankWebhook:latest
+          tags: mame2611/remimo-bankwebhook:latest
           no-cache: true
 
       - name: Deploy remimo-userApp to EC2 
