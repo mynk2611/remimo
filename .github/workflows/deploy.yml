@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile.bankwebhook
           push: true
-          tags: mame2611/remimo-bankwebhook:latest
+          tags: mame2611/remimo-bankWebhook:latest
           no-cache: true
 
       - name: Deploy remimo-userApp to EC2 
