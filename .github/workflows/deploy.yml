@@ -50,4 +50,4 @@ jobs:
             sudo docker pull mame2611/remimo-bankwebhook:latest
             sudo docker stop bankwebhook || true
             sudo docker rm bankwebhook || true
-            sudo docker run -d -p 3003:3003 --name bankwebhook -e DATABASE_URL=${{ secrets.DATABASE_URL }} mame2611/remimo-bankwebhook:latest
+            sudo docker run -d -p 3003:3003 --name bankwebhook -e DATABASE_URL=${{ secrets.DATABASE_URL_2 }} mame2611/remimo-bankwebhook:latest
